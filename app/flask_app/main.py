@@ -71,7 +71,41 @@ def origin(origin):
 	finally:
 		cursor.close() 
 		conn.close()
-		
+
+#Get Breed with origin equals <origin>
+@app.route('/hat')
+def hat():
+	try:
+		conn = mysql.connect()
+		cursor = conn.cursor(pymysql.cursors.DictCursor)
+		cursor.execute("SELECT * FROM cats WHERE id_api LIKE %s", "%hat%")
+		empRow = cursor.fetchall()
+		respone = jsonify(empRow)
+		respone.status_code = 200
+		return respone
+	except Exception as e:
+		print(e)
+	finally:
+		cursor.close() 
+		conn.close()
+
+#Get Breed with origin equals <origin>
+@app.route('/glasses')
+def glasses():
+	try:
+		conn = mysql.connect()
+		cursor = conn.cursor(pymysql.cursors.DictCursor)
+		cursor.execute("SELECT * FROM cats WHERE id_api LIKE %s", "%glasses%")
+		empRow = cursor.fetchall()
+		respone = jsonify(empRow)
+		respone.status_code = 200
+		return respone
+	except Exception as e:
+		print(e)
+	finally:
+		cursor.close() 
+		conn.close()
+
 @app.errorhandler(404)
 def not_found(error=None):
     message = {

@@ -45,7 +45,7 @@ def get_breeds(u, h):
       img[2]="Null"
     #Create MySQL Con:
     con_mysql = conn.connect(
-      host="localhost",
+      host="mysql-cat",
       port=3306,
       user="devops",
       passwd="mestre",
@@ -83,7 +83,7 @@ def get_cat_category(u, h):
     img[i] = data[i]['url']
   #Create MySQL Con
   con_mysql = conn.connect(
-    host="localhost",
+    host="mysql-cat",
     port=3306,
     user="devops",
     passwd="mestre",

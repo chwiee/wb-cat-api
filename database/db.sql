@@ -1,5 +1,6 @@
 create user 'devops'@'%' identified by 'mestre';
 grant all privileges on *.* to devops@'%' identified by 'mestre';
+flush privileges;
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
